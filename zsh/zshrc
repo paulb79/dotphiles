@@ -112,12 +112,21 @@ source "$DOTZSH/init.zsh"
 
 ### Customize to your needs...
 
+source .dotfiles/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 source .dotfiles/zsh-git-prompt/zshrc.sh
 setopt PROMPT_SUBST
 
 PROMPT='%B%n in %~%b $(git_super_status) %# '
 
+zstyle ':dotzsh:module:history-substring-search' color 'yes'
 
+export HISTFILE="$HOME/.history/zsh"  # The path to the history file.
+export HISTSIZE=50000                 # The maximum number of events to save in the internal history.
+export SAVEHIST=50000
+
+setopt inc_append_history
+setopt share_history
 
 # Easier navigation: .., ..., ~ and -
 alias ..="cd .."
