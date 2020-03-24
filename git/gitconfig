@@ -10,7 +10,7 @@
 # Global Config
 [user]
     name = "Paul Brown"
-    email = "prwbrown@gmail.com"
+    email = "2188950+paulb79@users.noreply.github.com"
     #signingkey = **Your GPG ID**
 
 [branch "master"]
@@ -145,4 +145,10 @@
 
 [url "git@github.com:"]
     insteadof = github:
+
+[credential "https://git-codecommit.eu-west-2.amazonaws.com"]
+    helper = delete-from-keychain
+    helper = !aws --profile codecommit codecommit credential-helper $@
+    UseHttpPath = true
+
 
