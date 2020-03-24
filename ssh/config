@@ -19,7 +19,7 @@ HashKnownHosts no
 
 # Default
 Host *
-    #User username
+    User paulb79
     StrictHostKeyChecking ask
     ServerAliveCountMax 6
     ServerAliveInterval 30
@@ -28,3 +28,30 @@ Host *
     #ControlPath ~/.ssh/master/%r@%h:%p
     #ControlPersist 8h
 
+Host 3.8.232.46
+  IdentityFile ~/.ssh/safari-dev-2-bastion.pem
+
+Host 35.177.158.145
+  IdentityFile ~/.ssh/master/hmrc_id_rsa
+
+Host 172.31.*.*
+  IdentityFile ~/.ssh/master/safari-dev-2.pem  
+  IdentityFile ~/.ssh/master/bdec-brown.pem
+  IdentityFile ~/.bdecvpn/pb-dev-3.pem
+  StrictHostKeyChecking no
+  UserKnownHostsFile=/dev/null
+
+Host github.com
+  Hostname github.com
+  IdentityFile ~/.ssh/master/paulb-git-key
+
+Host github.tools.tax.service.gov.uk
+  Hostname github.tools.tax.service.gov.uk
+  IdentityFile ~/.ssh/master/hmrc_id_rsa
+  User paul-brown
+
+Host git-codecommit.*.amazonaws.com
+  User APKAIQWZZHB45IIBS6FA
+  IdentityFile ~/.ssh/master/hmrc_id_rsa
+  IgnoreUnknown UseKeychain
+  User paul-brown

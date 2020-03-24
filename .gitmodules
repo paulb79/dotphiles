@@ -16,3 +16,6 @@
 [submodule "vim/dotvim"]
 	path = vim/dotvim
 	url = https://github.com/dotphiles/dotvim.git
+[submodule "zsh-git-prompt"]
+	path = zsh-git-prompt
+	url = https://github.com/olivierverdier/zsh-git-prompt.git
