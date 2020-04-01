@@ -37,6 +37,7 @@ Host 35.177.158.145
 Host 172.31.*.*
   IdentityFile ~/.ssh/master/safari-dev-2.pem  
   IdentityFile ~/.ssh/master/bdec-brown.pem
+  IdentityFile ~/.bdecvpn/spock.pem
   IdentityFile ~/.bdecvpn/pb-dev-3.pem
   StrictHostKeyChecking no
   UserKnownHostsFile=/dev/null
