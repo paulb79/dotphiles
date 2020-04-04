@@ -113,9 +113,9 @@ source "$DOTZSH/init.zsh"
 
 ### Customize to your needs...
 
-source .dotfiles/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.dotfiles/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-source .dotfiles/zsh-git-prompt/zshrc.sh
+source ~/.dotfiles/zsh-git-prompt/zshrc.sh
 setopt PROMPT_SUBST
 
 PROMPT='%B%n in %~%b $(git_super_status) %# '
