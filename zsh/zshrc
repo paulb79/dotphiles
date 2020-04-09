@@ -102,7 +102,8 @@ zstyle ':dotzsh:module:syntax-highlighting' highlighters 'main' 'brackets' 'patt
 # Set default theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-zstyle ':dotzsh:module:theme' theme 'dotphiles' 'steeef'
+# zstyle ':dotzsh:module:theme' theme 'dotphiles' 'steeef'
+zstyle ':dotzsh:module:theme' theme 'dotphiles' 'base16-railscasts.dark'
 ### Set custom theme based on hostname or domain
 # zstyle ':dotzsh:module:theme:hostname:your-host-here' theme 'dotphiles' 'soldark' 'magenta'
 # zstyle ':dotzsh:module:theme:hostname:your-other-host-here' theme 'dotphiles' 'soldark' 'violet'
@@ -119,6 +120,7 @@ source ~/.dotfiles/zsh-git-prompt/zshrc.sh
 setopt PROMPT_SUBST
 
 PROMPT='%B%n in %~%b $(git_super_status) %# '
+LC_TERM_PROFILE=base16-railscasts.dark
 
 zstyle ':dotzsh:module:history-substring-search' color 'yes'
 
