@@ -28,17 +28,15 @@ Host *
     #ControlPath ~/.ssh/master/%r@%h:%p
     #ControlPersist 8h
 
-Host 3.8.232.46
-  IdentityFile ~/.ssh/safari-dev-2-bastion.pem
-
 Host 35.177.158.145
   IdentityFile ~/.ssh/master/hmrc_id_rsa
 
 Host 172.31.*.*
-  IdentityFile ~/.ssh/master/safari-dev-2.pem  
+  IdentityFile ~/.bdecvpn/safari-dev-2.pem  
   IdentityFile ~/.ssh/master/bdec-brown.pem
   IdentityFile ~/.bdecvpn/spock.pem
   IdentityFile ~/.bdecvpn/pb-dev-3.pem
+  IdentityFile ~/.bdecvpn/gav-remote-working.pem
   StrictHostKeyChecking no
   UserKnownHostsFile=/dev/null
 
@@ -56,3 +54,9 @@ Host git-codecommit.*.amazonaws.com
   IdentityFile ~/.ssh/master/hmrc_id_rsa
   IgnoreUnknown UseKeychain
   User paul-brown
+
+Host 3.8.36.11
+  IdentityFile ~/.bdecvpn/safari-dev-2-bastion.pem
+  StrictHostKeyChecking no
+  UserKnownHostsFile=/dev/null
+

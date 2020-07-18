@@ -27,6 +27,7 @@ brew cask install flux
 brew cask install gitup                    
 brew cask install google-chrome            
 brew cask install gpgtools
+brew cask install handbrake
 brew cask install imagealpha
 brew cask install imageoptim
 brew cask install intellij-idea            
@@ -38,6 +39,7 @@ brew cask install sequel-pro
 brew cask install setapp                   
 brew cask install slack
 brew cask install spectacle
+brew cask install sourcetree
 brew cask install sublime-text
 brew cask install superduper
 brew cask install torbrowser
@@ -48,7 +50,6 @@ brew cask install virtualbox
 brew cask install visual-studio-code
 brew cask install vlc
 brew cask install vnc-viewer
-
 
 brew tap caskroom/fonts 
 brew cask install font-fira-code

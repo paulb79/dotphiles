@@ -1,0 +1,3 @@
+#!/bin/sh
+
+open -a "/Users/paulb/Library/Application Support/JetBrains/Toolbox/apps/IDEA-U/ch-0/193.7288.26/IntelliJ IDEA.app/Contents/MacOS/idea" "$@"

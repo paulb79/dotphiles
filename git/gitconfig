@@ -9,8 +9,8 @@
 
 # Global Config
 [user]
-    name = "Paul Brown"
-    email = "2188950+paulb79@users.noreply.github.com"
+	name = Paul Brown
+	email = 2188950+paulb79@users.noreply.github.com
     #signingkey = **Your GPG ID**
 
 [branch "master"]
@@ -51,6 +51,7 @@
 [core]
     pager = less -FRSX
     whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	excludesfile = /Users/paulb/.gitignore_global
 
 [diff]
     tool = vimdiff
@@ -141,7 +142,7 @@
     rem = remote rename
 
 [push]
-    default = matching
+    default = simple
 
 [url "git@github.com:"]
     insteadof = github:
@@ -152,3 +153,9 @@
     UseHttpPath = true
 
 
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
