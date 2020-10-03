@@ -116,6 +116,8 @@ source "$DOTZSH/init.zsh"
 
 source ~/.dotfiles/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+ZSH_AUTOSUGGEST_STRATEGY=history
+
 source ~/.dotfiles/zsh-git-prompt/zshrc.sh
 setopt PROMPT_SUBST
 
@@ -179,3 +181,10 @@ export NODE_PATH=/usr/local/lib/node_modules
 # Bind alt+b and alt+f to move back and forth by word
 bindkey '^[^[[C' emacs-forward-word
 bindkey '^[^[[D' emacs-backward-word
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

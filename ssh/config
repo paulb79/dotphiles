@@ -55,7 +55,7 @@ Host git-codecommit.*.amazonaws.com
   IgnoreUnknown UseKeychain
   User paul-brown
 
-Host 3.8.36.11
+Host 18.132.206.6
   IdentityFile ~/.bdecvpn/safari-dev-2-bastion.pem
   StrictHostKeyChecking no
   UserKnownHostsFile=/dev/null

@@ -18,6 +18,7 @@ brew install cabal-install
 brew install cask
 brew install clojure
 brew install coreutils
+brew install direnv
 brew install entr
 brew install ffmpeg
 brew install findutils
