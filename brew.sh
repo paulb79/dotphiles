@@ -33,7 +33,7 @@ brew install groovy
 brew install homebrew/completions/brew-cask-completion
 brew install hub
 brew install imagemagick
-brew install jenv
+brew install jenv                   # Manage Java versions
 brew install jq
 brew install libksba
 brew install maven
@@ -48,7 +48,7 @@ brew install oath-toolkit
 brew install openssh
 brew install openvpn
 brew install packer
-brew install pidcat   # colored logcat guy
+brew install pidcat                 # colored logcat guy
 brew install postgresql
 brew install pv
 brew install rename
@@ -57,7 +57,7 @@ brew install sbt
 brew install scala
 brew install screen
 brew install sshpass
-brew install telnet
+brew install telnet                 # to debug openvpn 
 brew install terminal-notifier
 brew install tesseract
 brew install the_silver_searcher
@@ -67,7 +67,6 @@ brew install tree
 brew install truncate
 brew install vim neovim 
 brew install watch
-brew install wget
 brew install wget
 brew install z
 brew install zlib
