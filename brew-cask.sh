@@ -8,12 +8,10 @@
 # Install native apps
 
 brew install caskroom/cask/brew-cask
-# brew tap caskroom/versions
 
-# brew cask install disk-inventory-x
 brew cask install 1password
 brew cask install alfred 
-# brew cask install atom
+
 brew cask install balenaetcher    
 brew cask install chai
 brew cask install chatmate-for-whatsapp                 
@@ -22,7 +20,7 @@ brew cask install daisydisk
 brew cask install dash
 brew cask install dbeaver-community
 brew cask install deezer
-brew cask install docker                   
+# brew cask install docker   		# This doesn't appear to install a proper version of docker, get it from hub.docker.com
 brew cask install dropbox
 brew cask install firefox                  
 brew cask install flux                     
@@ -34,11 +32,9 @@ brew cask install imagealpha
 brew cask install imageoptim
 # brew cask install intellij-idea    # Install the Intellij toolbox and manage all tools through that        
 brew cask install iterm2
-# brew cask install karabiner-elements
-# brew cask install mysqlworkbench  
+brew cask install keepassx
 brew cask install microsoft-teams         
 brew cask install postman
-# brew cask install sequel-pro
 brew cask install setapp                   
 brew cask install slack
 brew cask install sketchup

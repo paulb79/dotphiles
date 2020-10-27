@@ -24,6 +24,7 @@ zstyle ':dotzsh:load' dzmodule \
   'environment' \
   'terminal' \
   'editor' \
+  'fasd' \
   'history' \
   'utility' \
   'completion' \
@@ -167,7 +168,7 @@ export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
 # Git
-export GIT_EDITOR=nvim
+export GIT_EDITOR=vim
 
 # Java
 export PATH=$JAVA_HOME/bin:$PATH
@@ -188,3 +189,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 eval "$(direnv hook zsh)"
+export PATH="/usr/local/opt/awscli@1/bin:$PATH"
+
+# Added by serverless binary installer
+export PATH="$HOME/.serverless/bin:$PATH"
