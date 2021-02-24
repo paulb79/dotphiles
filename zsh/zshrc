@@ -164,9 +164,6 @@ export LANG="en_GB"
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-
 # Git
 export GIT_EDITOR=vim
 
@@ -193,3 +190,10 @@ export PATH="/usr/local/opt/awscli@1/bin:$PATH"
 
 # Added by serverless binary installer
 export PATH="$HOME/.serverless/bin:$PATH"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/paulb/.sdkman"
+[[ -s "/Users/paulb/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/paulb/.sdkman/bin/sdkman-init.sh"
+
+# Added by Amplify CLI binary installer
+export PATH="$HOME/.amplify/bin:$PATH"
