@@ -15,7 +15,7 @@ brew cask install alfred
 brew cask install balenaetcher    
 brew cask install chai
 brew cask install chatmate-for-whatsapp                 
-# brew cask install cheatsheet
+brew cask install cheatsheet
 brew cask install daisydisk
 brew cask install dash
 brew cask install dbeaver-community
@@ -32,6 +32,7 @@ brew cask install imagealpha
 brew cask install imageoptim
 # brew cask install intellij-idea    # Install the Intellij toolbox and manage all tools through that        
 brew cask install iterm2
+brew cask install karabiner-elements
 brew cask install keepassx
 brew cask install microsoft-teams         
 brew cask install postman
@@ -40,7 +41,7 @@ brew cask install slack
 brew cask install sketchup
 brew cask install skype
 brew cask install spectacle
-# brew cask install spotify
+brew cask install spotify
 brew cask install sourcetree
 brew cask install sublime-text
 brew cask install superduper
