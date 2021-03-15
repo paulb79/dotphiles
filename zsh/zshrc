@@ -53,7 +53,7 @@ zstyle ':dotzsh:module:terminal' auto-title 'yes'
 # Set the key mapping style to 'emacs' or 'vi'.
 zstyle ':dotzsh:module:editor' keymap 'emacs'
 # Set EDITOR to 'emacs' or 'vi'.
-zstyle ':dotzsh:module:editor' editor 'emacs'
+zstyle ':dotzsh:module:editor' editor 'vi'
 # Auto convert .... to ../..
 zstyle ':dotzsh:module:editor' dot-expansion 'yes'
 
@@ -103,8 +103,8 @@ zstyle ':dotzsh:module:syntax-highlighting' highlighters 'main' 'brackets' 'patt
 # Set default theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-# zstyle ':dotzsh:module:theme' theme 'dotphiles' 'steeef'
-zstyle ':dotzsh:module:theme' theme 'dotphiles' 'base16-railscasts.dark'
+zstyle ':dotzsh:module:theme' theme 'dotphiles' 'steeef'
+# zstyle ':dotzsh:module:theme' theme 'dotphiles' 'base16-railscasts.dark'
 ### Set custom theme based on hostname or domain
 # zstyle ':dotzsh:module:theme:hostname:your-host-here' theme 'dotphiles' 'soldark' 'magenta'
 # zstyle ':dotzsh:module:theme:hostname:your-other-host-here' theme 'dotphiles' 'soldark' 'violet'
@@ -123,7 +123,7 @@ source ~/.dotfiles/zsh-git-prompt/zshrc.sh
 setopt PROMPT_SUBST
 
 PROMPT='%B%n in %~%b $(git_super_status) %# '
-LC_TERM_PROFILE=base16-railscasts.dark
+LC_TERM_PROFILE=steeef
 
 zstyle ':dotzsh:module:history-substring-search' color 'yes'
 
@@ -164,6 +164,9 @@ export LANG="en_GB"
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
+# Python - pyenv 
+eval "$(pyenv init -)" 
+
 # Git
 export GIT_EDITOR=vim
 
@@ -191,9 +194,9 @@ export PATH="/usr/local/opt/awscli@1/bin:$PATH"
 # Added by serverless binary installer
 export PATH="$HOME/.serverless/bin:$PATH"
 
+# Added by Amplify CLI binary installer
+export PATH="$HOME/.amplify/bin:$PATH"
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/paulb/.sdkman"
 [[ -s "/Users/paulb/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/paulb/.sdkman/bin/sdkman-init.sh"
-
-# Added by Amplify CLI binary installer
-export PATH="$HOME/.amplify/bin:$PATH"

@@ -22,7 +22,8 @@ if has("user_commands")
   source ~/.vim/vundles.vim
   " Add extra bundles here...
   " Bundle 'reponame'
-  let g:airline_theme='base16-railscasts'
+  let g:airline_theme='simple'
+  let g:airline_powerline_fonts = 1
 endif
 
 " Customize to your needs...

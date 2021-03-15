@@ -40,6 +40,8 @@ Installation
 
   6. Start a new login shell.
 
+  7. Install the powerline-fonts fonts by visiting the fonts module and running the shell script `install.sh` 
+
 Configuration
 -------------
 
