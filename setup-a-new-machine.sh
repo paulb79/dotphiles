@@ -241,3 +241,6 @@ ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/su
 
 ###
 ##############################################################################################################
+
+# Install the VS Code extenstions
+./vscode/install_extensions.sh 
