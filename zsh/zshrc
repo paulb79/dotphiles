@@ -6,6 +6,7 @@
 # Authors:
 #   Ben O'Hara <bohara@gmail.com>
 #
+date "+%s.%N"
 
 # debug: see with `dzinfo`
 ##zstyle ':dotzsh:load' timing 'yes'
@@ -73,7 +74,6 @@ zstyle ':dotzsh:module:completion' expand-global-aliases 'yes'
 zstyle ':dotzsh:module:ssh:agent' forwarding 'yes'
 #zstyle ':dotzsh:module:ssh:aliases' hosts 'yes'
 ##zstyle ':dotzsh:module:ssh:agent' identities 'id_rsa' 'id_rsa2' 'id_github'
-
 ### GNUPG module
 # Enable ssh-agent protocol emulation for gpg-agent
 ##zstyle ':dotzsh:module:gnupg' agent-ssh-support 'yes'
@@ -83,7 +83,6 @@ zstyle ':dotzsh:module:ssh:agent' forwarding 'yes'
 zstyle ':dotzsh:module:osx' launcher 'yes'
 # Open/Resume temrinal in correct dir
 zstyle ':dotzsh:module:osx' terminal-resume 'yes'
-
 ### Git module
 # Disable all git aliases
 ##zstyle ':dotzsh:module:git' aliases 'no'
@@ -112,17 +111,15 @@ zstyle ':dotzsh:module:theme' theme 'dotphiles' 'steeef'
 
 ### Load dotzsh
 source "$DOTZSH/init.zsh"
-
 ### Customize to your needs...
 
 source ~/.dotfiles/zsh-autosuggestions/zsh-autosuggestions.zsh
-
 ZSH_AUTOSUGGEST_STRATEGY=history
 
 source ~/.dotfiles/zsh-git-prompt/zshrc.sh
 setopt PROMPT_SUBST
-
 PROMPT='%B%n in %~%b $(git_super_status) %# '
+
 LC_TERM_PROFILE=steeef
 
 zstyle ':dotzsh:module:history-substring-search' color 'yes'
@@ -185,6 +182,7 @@ bindkey '^[^[[D' emacs-backward-word
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
 
 eval "$(direnv hook zsh)"
+
 export PATH="/usr/local/opt/awscli@1/bin:$PATH"
 
 # Added by serverless binary installer
@@ -193,10 +191,27 @@ export PATH="$HOME/.serverless/bin:$PATH"
 # Added by Amplify CLI binary installer
 export PATH="$HOME/.amplify/bin:$PATH"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# NVM is very slow to load this shifts it to only occur if we are actually using node
+alias node='unalias npm; unalias node; nvm_init; use_node_version; node $@'
+alias npm='unalias node; unalias npm; nvm_init; use_node_version; npm $@'
+
+function nvm_init {
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm
+}
+
+function use_node_version {
+   local node_version="$(nvm version)"
+   local nvmrc_path="$(nvm_find_nvmrc)"
+
+   
+    FILE=.nvmrc
+    if [ "$nvmrc_node_version" != "$node_version" ]; then
+        nvm use
+    fi
+}
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/paulb/.sdkman"
 [[ -s "/Users/paulb/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/paulb/.sdkman/bin/sdkman-init.sh"
+date "+%s.%N"
