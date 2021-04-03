@@ -22,6 +22,7 @@ brew install coreutils
 brew install direnv
 brew install entr
 brew install fasd
+brew install fd # alternative to unix find
 brew install ffmpeg
 brew install findutils
 brew install fzf
@@ -45,7 +46,8 @@ brew install mysql
 brew install mysql-client
 brew install nano
 brew install ncdu # find where your diskspace went
-brew install node # This installs `npm` too using the recommended installation method
+brew install nnn # like midnight commander for the cli
+# brew install node # install NVM and manager this from there don't use brew node as it's not supported by nodejs
 brew install oath-toolkit
 brew install openssh
 brew install openvpn
@@ -55,6 +57,7 @@ brew install postgresql
 brew install pv
 brew install rename
 brew install rpm
+brew install rg # ripgrep - line 
 brew install sbt
 brew install scala
 brew install screen
@@ -63,6 +66,7 @@ brew install telnet                 # to debug openvpn
 brew install terminal-notifier
 brew install tesseract
 brew install the_silver_searcher
+brew install tldr # 
 brew install tmux
 brew install tor
 brew install tree
