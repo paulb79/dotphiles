@@ -19,44 +19,123 @@ HashKnownHosts no
 
 # Default
 Host *
-    User paulb79
-    StrictHostKeyChecking ask
-    ServerAliveCountMax 6
-    ServerAliveInterval 30
-    KeepAlive yes
-    #ControlMaster auto
-    #ControlPath ~/.ssh/master/%r@%h:%p
-    #ControlPersist 8h
-
-Host 35.177.158.145
-  IdentityFile ~/.ssh/master/hmrc_id_rsa
-
-Host 172.31.*.*
-  IdentityFile ~/.bdecvpn/safari-dev-2.pem  
-  IdentityFile ~/.ssh/master/bdec-brown.pem
-  IdentityFile ~/.bdecvpn/spock.pem
-  IdentityFile ~/.bdecvpn/pb-dev-3.pem
-  IdentityFile ~/.bdecvpn/gav-remote-working.pem
-  StrictHostKeyChecking no
-  UserKnownHostsFile=/dev/null
-
+    User paul.brown
+    IdentityFile ~/.ssh/master/hmrc_id_rsa
+    #StrictHostKeyChecking ask
+    #ServerAliveCountMax 6
+    #ServerAliveInterval 30
+    #KeepAlive yes
+    
 Host github.com
   Hostname github.com
   IdentityFile ~/.ssh/master/paulb-git-key
-
-Host github.tools.tax.service.gov.uk
-  Hostname github.tools.tax.service.gov.uk
-  IdentityFile ~/.ssh/master/hmrc_id_rsa
-  User paul-brown
 
 Host git-codecommit.*.amazonaws.com
   User APKAIQWZZHB45IIBS6FA
   IdentityFile ~/.ssh/master/hmrc_id_rsa
   IgnoreUnknown UseKeychain
-  User paul-brown
+  User paul.brown
 
 Host 18.132.206.6
   IdentityFile ~/.bdecvpn/safari-dev-2-bastion.pem
   StrictHostKeyChecking no
   UserKnownHostsFile=/dev/null
 
+### MDTP Section ###
+
+#### MDTP Sandbox Bastion
+Host mdtp-sandbox-bastion
+  Hostname bastion.sandbox.tax.service.gov.uk
+  User paul.brown
+  IdentityFile ~/.ssh/master/hmrc_id_rsa
+
+#### MDTP Sandbox Connectivity
+  Host 172.31.* ip-172-31*.eu-west-2.compute.internal *.sandbox.mdtp
+  ProxyJump mdtp-sandbox-bastion
+  User paul.brown
+  IdentityFile ~/.ssh/master/hmrc_id_rsa
+
+#### MDTP Core Connectivity Bastion
+Host mdtp-management-bastion
+  Hostname bastion.management.tax.service.gov.uk
+  User paul.brown
+  IdentityFile ~/.ssh/master/hmrc_id_rsa
+
+#### MDTP Core Connectivity
+Host 172.* ip-172-*.eu-west-2.compute.internal *.mdtp 10.0.* 10.57.* 10.58.* 10.59.* 10.60.* 10.61.* 10.62.* 10.63.* 10.136.* 10.182.* 10.51.*
+  ProxyJump mdtp-management-bastion
+  User paul.brown
+  IdentityFile ~/.ssh/master/hmrc_id_rsa
+
+### End MDTP Section ###
+
+
+### TXM Section ###
+
+#### TXM Core Connectivity Bastion
+Host txm-tools-bastion
+  Hostname bastion.tools.txm
+  User paul.brown
+  IdentityFile ~/.ssh/master/hmrc_id_rsa
+
+#### TxM Core Connectivity
+Host 10.200.* 10.202.* 10.203.* 10.204.* 10.205.*
+  ProxyJump txm-tools-bastion
+  User paul.brown
+  IdentityFile ~/.ssh/master/hmrc_id_rsa
+
+#### CIP DAME QA Connectivity
+  Host "10.42.*"
+  ProxyJump cip-dame-qa-bastion
+  User paul.brown
+  IdentityFile ~/.ssh/master/hmrc_id_rsa
+
+#### CIP Maps Integration Bastion
+Host cip-maps-integration-bastion
+  Hostname bastion.integration.maps.tools.txm
+  User paul.brown
+  IdentityFile ~/.ssh/master/hmrc_id_rsa
+
+#### CIP Maps Integration Connectivity
+  Host "10.40.4.*", "10.40.5.*", "10.40.6.*"
+  ProxyJump cip-maps-integration-bastion
+  User paul.brown
+  IdentityFile ~/.ssh/master/hmrc_id_rsa
+
+#### CIP Maps QA Bastion
+Host cip-maps-qa-bastion
+  Hostname bastion.qa.maps.tools.txm
+  User paul.brown
+  IdentityFile ~/.ssh/master/hmrc_id_rsa
+
+#### CIP Maps QA Connectivity
+  Host "10.40.8.*", "10.40.9.*", "10.40.10.*"
+  ProxyJump cip-maps-qa-bastion
+  User paul.brown
+  IdentityFile ~/.ssh/master/hmrc_id_rsa
+
+#### CIP Maps Staging Bastion
+Host cip-maps-staging-bastion
+  Hostname bastion.staging.maps.tools.txm
+  User paul.brown
+  IdentityFile ~/.ssh/master/hmrc_id_rsa
+
+#### CIP Maps Staging Connectivity
+  Host "10.40.12.*", "10.40.13.*", "10.40.14.*"
+  ProxyJump cip-maps-staging-bastion
+  User paul.brown
+  IdentityFile ~/.ssh/master/hmrc_id_rsa
+
+#### CIP Maps Production Bastion
+Host cip-maps-production-bastion
+  Hostname bastion.production.maps.tools.txm
+  User paul.brown
+  IdentityFile ~/.ssh/master/hmrc_id_rsa
+
+#### CIP Maps Production Connectivity
+  Host "10.40.0.*", "10.40.1.*", "10.40.2.*"
+  ProxyJump cip-maps-production-bastion
+  User paul.brown
+  IdentityFile ~/.ssh/master/hmrc_id_rsa
+
+### End CIP Section ###

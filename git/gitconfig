@@ -11,6 +11,7 @@
 [user]
 	name = Paul Brown
 	email = 2188950+paulb79@users.noreply.github.com
+	signingkey = 141C6DF091F75DB90B5F11C0CECCBC7B3C691076
     #signingkey = **Your GPG ID**
 
 [branch "master"]
@@ -22,7 +23,7 @@
     diff = always
     grep = always
     interactive = always
-    pager = true
+    pager = false
     showbranch = auto
     status = auto
     ui = always
@@ -161,3 +162,5 @@
 	trustExitCode = true
 [pull]
 	rebase = true
+[commit]
+	gpgsign = true

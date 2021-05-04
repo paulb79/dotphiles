@@ -60,11 +60,11 @@ zstyle ':dotzsh:module:editor' dot-expansion 'yes'
 
 ### Utility Module
 # Disable `diff` highlighting
-##zstyle ':dotzsh:module:utility:diff' color 'no'
+zstyle ':dotzsh:module:utility:diff' color 'no'
 # Disable `wdiff` highlighting
-##zstyle ':dotzsh:module:utility:wdiff' color 'no'
+zstyle ':dotzsh:module:utility:wdiff' color 'no'
 # Disable `make` highlighting
-##zstyle ':dotzsh:module:utility:make' color 'no'
+zstyle ':dotzsh:module:utility:make' color 'no'
 
 ### Completion module
 # Expand global aliases automatically
