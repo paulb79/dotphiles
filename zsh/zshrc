@@ -5,8 +5,6 @@
 #
 # Authors:
 #   Ben O'Hara <bohara@gmail.com>
-#
-date "+%s.%N"
 
 # debug: see with `dzinfo`
 ##zstyle ':dotzsh:load' timing 'yes'
@@ -170,13 +168,13 @@ export GIT_EDITOR=vim
 # Java
 export PATH=$JAVA_HOME/bin:$PATH
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
-
 # Node
 export NODE_PATH=/usr/local/lib/node_modules
 
 # Bind alt+b and alt+f to move back and forth by word
-bindkey '^[^[[C' emacs-forward-word
-bindkey '^[^[[D' emacs-backward-word
+# bindkey '^[^[[C' emacs-forward-word
+# bindkey '^[^[[D' emacs-backward-word
+
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
@@ -184,34 +182,3 @@ bindkey '^[^[[D' emacs-backward-word
 eval "$(direnv hook zsh)"
 
 export PATH="/usr/local/opt/awscli@1/bin:$PATH"
-
-# Added by serverless binary installer
-export PATH="$HOME/.serverless/bin:$PATH"
-
-# Added by Amplify CLI binary installer
-export PATH="$HOME/.amplify/bin:$PATH"
-
-# NVM is very slow to load this shifts it to only occur if we are actually using node
-alias node='unalias npm; unalias node; nvm_init; use_node_version; node $@'
-alias npm='unalias node; unalias npm; nvm_init; use_node_version; npm $@'
-
-function nvm_init {
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm
-}
-
-function use_node_version {
-   local node_version="$(nvm version)"
-   local nvmrc_path="$(nvm_find_nvmrc)"
-
-   
-    FILE=.nvmrc
-    if [ "$nvmrc_node_version" != "$node_version" ]; then
-        nvm use
-    fi
-}
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/paulb/.sdkman"
-[[ -s "/Users/paulb/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/paulb/.sdkman/bin/sdkman-init.sh"
-date "+%s.%N"

@@ -63,24 +63,23 @@ ssh
 #task/taskrc
 tmux/tmux.conf
 tmux/tmuxinator
-vim/dotvim:.vim
-vim/vimrc
-vim/gvimrc
+# vim/dotvim:.vim
+# vim/vimrc
+# vim/gvimrc
 #wget/wgetrc
 #zsh/fasdrc
-zsh/dotzsh:.zsh
-zsh/zlogin
-zsh/zlogout
-zsh/zprofile
-zsh/zshenv
-zsh/zshrc
+#zsh/dotzsh:.zsh
+# zsh/zlogin
+# zsh/zlogout
+# zsh/zprofile
+# zsh/zshenv
+# zsh/zshrc
 [endfiles]
 
 # Hosts to sync
 ## hostname                     type=masterhost, ANY or NONE    files=dotfile:tolink,another:tolink
 [hosts]
-Pauls-Macbook                    git=ANY
-Pauls-Mac                        git=ANY
+PAULS-MAC                        git=ANY
 
 #host1.example.com               git=ANY                        files=custom/dotfile    #git repo, pull from anywhere and link a custom dotfile
 #host2.example.com               git=ANY                                                #git repo, pull from anywhere

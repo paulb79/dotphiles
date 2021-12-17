@@ -55,6 +55,7 @@ brew install packer
 brew install pidcat                 # colored logcat guy
 brew install postgresql
 brew install pv
+brew install qlstephen              # quick look support for various text files
 brew install rename
 brew install rpm
 brew install rg # ripgrep - line 

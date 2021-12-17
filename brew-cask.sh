@@ -1,58 +1,55 @@
 #!/bin/bash
 
 
-# to maintain cask ....
-#     brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup`
+# to maintain ....
+# brew update && brew upgrade brew && brew --cask cleanup && brew cleanup --cask`
 
 
 # Install native apps
 
-brew install caskroom/cask/brew-cask
+brew install --cask 1password
+brew install --cask alfred 
+brew install --cask balenaetcher    
+brew install --cask chai
+brew install --cask chatmate-for-whatsapp                 
+brew install --cask cheatsheet
+brew install --cask daisydisk
+brew install --cask dash
+brew install --cask dbeaver-community
+# brew install --cask docker   		# This doesn't appear to install a proper version of docker, get it from hub.docker.com
+brew install --cask dropbox
+brew install --cask firefox                  
+brew install --cask flux                     
+brew install --cask gitup                    
+brew install --cask google-chrome            
+brew install --cask gpgtools
+brew install --cask handbrake
+brew install --cask imagealpha
+brew install --cask imageoptim
+# brew install --cask intellij-idea    # Install the Intellij toolbox and manage all tools through that        
+brew install --cask iterm2
+brew install --cask keepassx
+brew install --cask microsoft-teams         
+brew install --cask postman
+brew install --cask setapp                   
+brew install --cask slack
+brew install --cask sketchup
+brew install --cask skype
+brew install --cask spectacle
+brew install --cask spotify
+brew install --cask sourcetree
+brew install --cask sublime-text
+brew install --cask superduper
+brew install --cask torbrowser
+brew install --cask utorrent
+brew install --cask vagrant
+brew install --cask vagrant-manager
+brew install --cask virtualbox
+brew install --cask visual-studio-code
+brew install --cask vlc
+brew install --cask vnc-viewer
 
-brew cask install 1password
-brew cask install alfred 
+brew tap homebrew/cask-fonts
+brew install --cask font-fira-code
 
-brew cask install balenaetcher    
-brew cask install chai
-brew cask install chatmate-for-whatsapp                 
-brew cask install cheatsheet
-brew cask install daisydisk
-brew cask install dash
-brew cask install dbeaver-community
-brew cask install deezer
-# brew cask install docker   		# This doesn't appear to install a proper version of docker, get it from hub.docker.com
-brew cask install dropbox
-brew cask install firefox                  
-brew cask install flux                     
-brew cask install gitup                    
-brew cask install google-chrome            
-brew cask install gpgtools
-brew cask install handbrake
-brew cask install imagealpha
-brew cask install imageoptim
-# brew cask install intellij-idea    # Install the Intellij toolbox and manage all tools through that        
-brew cask install iterm2
-brew cask install karabiner-elements
-brew cask install keepassx
-brew cask install microsoft-teams         
-brew cask install postman
-brew cask install setapp                   
-brew cask install slack
-brew cask install sketchup
-brew cask install skype
-brew cask install spectacle
-brew cask install spotify
-brew cask install sourcetree
-brew cask install sublime-text
-brew cask install superduper
-brew cask install torbrowser
-brew cask install utorrent
-brew cask install vagrant
-brew cask install vagrant-manager
-brew cask install virtualbox
-# brew cask install visual-studio-code
-brew cask install vlc
-brew cask install vnc-viewer
-
-brew tap caskroom/fonts 
-brew cask install font-fira-code
+brew update

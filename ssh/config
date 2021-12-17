@@ -4,7 +4,7 @@
 # Description:  Config for ssh client
 #
 # Authors:
-#   Ben O'Hara <bohara@gmail.com>
+#  Paul Brown <paul@redjamjar.net> 
 #
 
 # Global Settings
@@ -12,10 +12,6 @@ ForwardAgent yes
 #VisualHostKey yes
 HashKnownHosts no
 #ConnectTimeout 2
-
-# My Hosts
-#Host hostname hostname.fqdn.com
-#    Hostname hostname.fqdn.com
 
 # Default
 Host *
@@ -35,11 +31,6 @@ Host git-codecommit.*.amazonaws.com
   IdentityFile ~/.ssh/master/hmrc_id_rsa
   IgnoreUnknown UseKeychain
   User paul.brown
-
-Host 18.132.206.6
-  IdentityFile ~/.bdecvpn/safari-dev-2-bastion.pem
-  StrictHostKeyChecking no
-  UserKnownHostsFile=/dev/null
 
 ### MDTP Section ###
 
