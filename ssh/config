@@ -32,6 +32,10 @@ Host git-codecommit.*.amazonaws.com
   IgnoreUnknown UseKeychain
   User paul.brown
 
+Host gitlab.com 
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/master/paulb-gitlab 
+
 ### MDTP Section ###
 
 #### MDTP Sandbox Bastion

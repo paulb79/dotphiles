@@ -18,6 +18,8 @@ brew install bash-completion
 brew install cabal-install
 brew install cask
 #brew install clojure
+#brew install chruby 	# simple alt to rvm and rbenv 
+#brew install ruby-install # installs ruby e.g. ruby-install ruby-3.0.3 into ~/.rubies
 brew install coreutils
 brew install direnv
 brew install entr

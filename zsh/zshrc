@@ -11,24 +11,24 @@
 ##zstyle ':dotzsh:module:*' timing 'yes'
 
 # Set the Zsh modules to load (man zshmodules).
-zstyle ':dotzsh:load' zmodule 'stat'
+# zstyle ':dotzsh:load' zmodule 'stat'
 
 # Set the Zsh functions to load (man zshcontrib).
-zstyle ':dotzsh:load' zfunction 'zargs' 'zmv'
+# zstyle ':dotzsh:load' zfunction 'zargs' 'zmv'
 
 # Set the dotzsh modules to load (browse modules).
 # The order matters.
 zstyle ':dotzsh:load' dzmodule \
-  'gnu-utility' \
-  'environment' \
-  'terminal' \
-  'editor' \
-  'fasd' \
-  'history' \
-  'utility' \
-  'completion' \
-  'theme' \
-  'git'
+#   'gnu-utility' \
+#   'environment' \
+#   'terminal' \
+#   'editor' \
+#   'fasd' 
+#   'history' \
+#   'utility' \
+#   'completion' \
+#   'theme' \
+#   'git'
 
 ### Global settings
 # Color output (auto set to 'no' on dumb terminals).
@@ -46,30 +46,30 @@ zstyle ':dotzsh:module:environment:pager:less' mousescroll 'false'
 
 ### Terminal Module
 # Auto set the tab and window titles.
-zstyle ':dotzsh:module:terminal' auto-title 'yes'
+# zstyle ':dotzsh:module:terminal' auto-title 'yes'
 
 ### Editor module
 # Set the key mapping style to 'emacs' or 'vi'.
-zstyle ':dotzsh:module:editor' keymap 'emacs'
+# zstyle ':dotzsh:module:editor' keymap 'emacs'
 # Set EDITOR to 'emacs' or 'vi'.
-zstyle ':dotzsh:module:editor' editor 'vi'
+# zstyle ':dotzsh:module:editor' editor 'vi'
 # Auto convert .... to ../..
-zstyle ':dotzsh:module:editor' dot-expansion 'yes'
+# zstyle ':dotzsh:module:editor' dot-expansion 'yes'
 
 ### Utility Module
 # Disable `diff` highlighting
-zstyle ':dotzsh:module:utility:diff' color 'no'
+# zstyle ':dotzsh:module:utility:diff' color 'no'
 # Disable `wdiff` highlighting
-zstyle ':dotzsh:module:utility:wdiff' color 'no'
+# zstyle ':dotzsh:module:utility:wdiff' color 'no'
 # Disable `make` highlighting
-zstyle ':dotzsh:module:utility:make' color 'no'
+# zstyle ':dotzsh:module:utility:make' color 'no'
 
 ### Completion module
 # Expand global aliases automatically
-zstyle ':dotzsh:module:completion' expand-global-aliases 'yes'
+# zstyle ':dotzsh:module:completion' expand-global-aliases 'yes'
 
 ### SSH module
-zstyle ':dotzsh:module:ssh:agent' forwarding 'yes'
+# zstyle ':dotzsh:module:ssh:agent' forwarding 'yes'
 #zstyle ':dotzsh:module:ssh:aliases' hosts 'yes'
 ##zstyle ':dotzsh:module:ssh:agent' identities 'id_rsa' 'id_rsa2' 'id_github'
 ### GNUPG module
@@ -78,9 +78,9 @@ zstyle ':dotzsh:module:ssh:agent' forwarding 'yes'
 
 ### OSX module
 # Add aliases for Applications
-zstyle ':dotzsh:module:osx' launcher 'yes'
+# zstyle ':dotzsh:module:osx' launcher 'yes'
 # Open/Resume temrinal in correct dir
-zstyle ':dotzsh:module:osx' terminal-resume 'yes'
+# zstyle ':dotzsh:module:osx' terminal-resume 'yes'
 ### Git module
 # Disable all git aliases
 ##zstyle ':dotzsh:module:git' aliases 'no'
@@ -93,14 +93,14 @@ zstyle ':dotzsh:module:osx' terminal-resume 'yes'
 #zstyle ':dotzsh:module:tmux:aliases' tmuxinator 'yes'
 
 ### Syntax Highlighting module
-zstyle ':dotzsh:module:syntax-highlighting' highlighters 'main' 'brackets' 'pattern' \
-  'cursor' 'root' \
+# zstyle ':dotzsh:module:syntax-highlighting' highlighters 'main' 'brackets' 'pattern' \
+  # 'cursor' 'root' \
 
 ### Theme module
 # Set default theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-zstyle ':dotzsh:module:theme' theme 'dotphiles' 'steeef'
+# zstyle ':dotzsh:module:theme' theme 'dotphiles' 'steeef'
 # zstyle ':dotzsh:module:theme' theme 'dotphiles' 'base16-railscasts.dark'
 ### Set custom theme based on hostname or domain
 # zstyle ':dotzsh:module:theme:hostname:your-host-here' theme 'dotphiles' 'soldark' 'magenta'
@@ -108,17 +108,20 @@ zstyle ':dotzsh:module:theme' theme 'dotphiles' 'steeef'
 # zstyle ':dotzsh:module:theme:domain:your-domain-here' theme 'dotphiles' 'soldark' 'orange'
 
 ### Load dotzsh
-source "$DOTZSH/init.zsh"
+# source "$DOTZSH/init.zsh"
 ### Customize to your needs...
 
-source ~/.dotfiles/zsh-autosuggestions/zsh-autosuggestions.zsh
-ZSH_AUTOSUGGEST_STRATEGY=history
-
 source ~/.dotfiles/zsh-git-prompt/zshrc.sh
+source ~/.sdkman/bin/sdkman-init.sh
+
+# git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
+eval "$(fasd --init auto)"
+
 setopt PROMPT_SUBST
 PROMPT='%B%n in %~%b $(git_super_status) %# '
-
-LC_TERM_PROFILE=steeef
 
 zstyle ':dotzsh:module:history-substring-search' color 'yes'
 
@@ -147,7 +150,6 @@ alias chmox='chmod -x'
 
 alias cask='brew cask' # i <3 u cask
 alias where=which # sometimes i forget
-alias brwe=brew  #typos
 
 alias hosts='sudo $EDITOR /etc/hosts'   # yes I occasionally 127.0.0.1 twitter.com ;)
 
@@ -160,7 +162,7 @@ export LANG="en_GB"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # Python - pyenv 
-eval "$(pyenv init -)" 
+# eval "$(pyenv init -)" 
 
 # Git
 export GIT_EDITOR=vim
@@ -177,8 +179,26 @@ export NODE_PATH=/usr/local/lib/node_modules
 
 # tabtab source for packages
 # uninstall by removing these lines
-[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
+# [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
 
-eval "$(direnv hook zsh)"
+# eval "$(direnv hook zsh)"
+
+source /usr/local/opt/chruby/share/chruby/chruby.sh
 
 export PATH="/usr/local/opt/awscli@1/bin:$PATH"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/paulb/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/paulb/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/paulb/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/paulb/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
