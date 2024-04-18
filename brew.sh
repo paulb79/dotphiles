@@ -22,6 +22,7 @@ brew install ffmpeg
 brew install findutils
 brew install fzf
 brew install git
+brew install go
 brew install gnu-sed
 brew install grep
 brew install hub
@@ -39,8 +40,6 @@ brew install pv
 brew install qlstephen              # quick look support for various text files
 brew install rename
 brew install rg # ripgrep - line 
-brew install sbt
-brew install scala
 brew install screen
 brew install terminal-notifier
 brew install tldr # 
@@ -60,5 +59,19 @@ mtrlocation=$(brew info mtr | grep Cellar | sed -e 's/ (.*//')
 sudo chmod 4755 $mtrlocation/sbin/mtr
 sudo chown root $mtrlocation/sbin/mtr
 
+# Add Scala / SBT 
+brew tap sdkman/tap
+brew install sdkman-cli
+
+# Add Node.js and npm
+brew install node@20
+node -v # should print `v20.12.2`
+npm -v # should print `10.5.0`
+
 # Remove outdated versions from the cellar
 brew cleanup
+
+# Install SDK Man - Java 
+sdk install java 
+sdk install sbt
+sdk install scala
